@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:page_view_indicators/circle_page_indicator.dart';
 
 class OrderPage extends StatelessWidget {
   const OrderPage({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final _currentPageNotifier = ValueNotifier<int>(0);
     String orderQuantity = "0";
     String price = "0";
     return Scaffold(
@@ -24,11 +26,15 @@ class OrderPage extends StatelessWidget {
         padding: const EdgeInsets.all(10.0),
         child: Column(
           children: <Widget>[
-            const Image(
-              image: AssetImage("assets/images/borgir.jpg"),
-              height: 250,
-              width: 250,
+            const FittedBox(
+              fit: BoxFit.fill,
+              child: Image(
+                image: AssetImage("assets/images/borgir.jpg"),
+                height: 200,
+                width: 300,
+              ),
             ),
+            CirclePageIndicator(currentPageNotifier: _currentPageNotifier, itemCount: 3),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
@@ -122,11 +128,14 @@ class OrderPage extends StatelessWidget {
                 ),
               ],
             ),
-            const SizedBox(height: 10.0),
+            const SizedBox(height: 20.0),
             Text(
                 "Lorem ipsum dolor sit amet. Eum odit minus sit provident possimus et voluptas totam et dolor veritatis ea temporibus consequatur et voluptatem minima et enim quia. Quo Quis quia rem amet voluptas id eius animi.",
-                style: Theme.of(context).textTheme.bodyMedium!.copyWith(fontWeight: FontWeight.normal)),
-            const SizedBox(height: 10.0),
+                style: Theme.of(context)
+                    .textTheme
+                    .bodyMedium!
+                    .copyWith(fontWeight: FontWeight.normal)),
+            const SizedBox(height: 15.0),
             Align(
               alignment: Alignment.centerLeft,
               child: Text("Ingredients",
@@ -138,67 +147,74 @@ class OrderPage extends StatelessWidget {
               child: Row(
                 children: <Widget>[
                   SizedBox(
-                      height: 100,
-                      width: 100,
+                      height: 120,
+                      width: 120,
                       child: Image(
                           image: AssetImage("assets/images/burger sauce.jpg"))),
                   SizedBox(
-                      height: 100,
-                      width: 100,
+                      height: 120,
+                      width: 120,
                       child: Image(
                           image: AssetImage("assets/images/ground beef.jpg"))),
                   SizedBox(
-                      height: 100,
-                      width: 100,
+                      height: 120,
+                      width: 120,
                       child:
                           Image(image: AssetImage("assets/images/onions.jpg"))),
                   SizedBox(
-                      height: 100,
-                      width: 100,
+                      height: 120,
+                      width: 120,
                       child: Image(
                           image: AssetImage("assets/images/lettuce.jpg"))),
                   SizedBox(
-                      height: 100,
-                      width: 100,
+                      height: 120,
+                      width: 120,
                       child: Image(
                           image: AssetImage("assets/images/pickles.jpg"))),
                   SizedBox(
-                      height: 100,
-                      width: 100,
+                      height: 120,
+                      width: 120,
                       child: Image(
                           image: AssetImage("assets/images/burger sauce.jpg"))),
                   SizedBox(
-                      height: 100,
-                      width: 100,
+                      height: 120,
+                      width: 120,
                       child: Image(
                           image: AssetImage("assets/images/ground beef.jpg"))),
                   SizedBox(
-                      height: 100,
-                      width: 100,
+                      height: 120,
+                      width: 120,
                       child:
                           Image(image: AssetImage("assets/images/onions.jpg"))),
                   SizedBox(
-                      height: 100,
-                      width: 100,
+                      height: 120,
+                      width: 120,
                       child: Image(
                           image: AssetImage("assets/images/lettuce.jpg"))),
                   SizedBox(
-                      height: 100,
-                      width: 100,
+                      height: 120,
+                      width: 120,
                       child: Image(
                           image: AssetImage("assets/images/pickles.jpg"))),
                 ],
               ),
             ),
-            const SizedBox(height: 10.0),
+            const SizedBox(height: 20.0),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 Column(
                   children: <Widget>[
-                    Text("Total",
-                        style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                            fontSize: 14.0, fontWeight: FontWeight.normal)),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 10.0),
+                      child: Text("Total",
+                          style: Theme.of(context)
+                              .textTheme
+                              .bodyMedium!
+                              .copyWith(
+                                  fontSize: 14.0,
+                                  fontWeight: FontWeight.normal)),
+                    ),
                     Text(price,
                         style: Theme.of(context)
                             .textTheme
