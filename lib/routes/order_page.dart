@@ -6,7 +6,7 @@ class OrderPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _currentPageNotifier = ValueNotifier<int>(0);
+    final currentPageNotifier = ValueNotifier<int>(0);
     String orderQuantity = "0";
     String price = "0";
     return Scaffold(
@@ -34,7 +34,7 @@ class OrderPage extends StatelessWidget {
                 width: 300,
               ),
             ),
-            CirclePageIndicator(currentPageNotifier: _currentPageNotifier, itemCount: 3),
+            CirclePageIndicator(currentPageNotifier: currentPageNotifier, itemCount: 3),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
