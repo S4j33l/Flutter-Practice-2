@@ -42,8 +42,8 @@ class MyProductPage extends StatelessWidget {
                     topLeft: Radius.circular(30.0),
                     topRight: Radius.circular(30.0)),
                 child: Container(
-                  height: 487,
-                  width: 487,
+                  height: 500,
+                  width: 500,
                   color: Colors.white,
                   padding: const EdgeInsets.all(10.0),
                   child: Column(
